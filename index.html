@@ -1,81 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Tutorial - Khung và Viền</title>
+    <title>Bài 16: Định dạng khung - Kết nối tri thức</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
             margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-bottom: 5px solid #004d40;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         h1, h2 {
             color: #333;
         }
 
+        .content-section {
+            margin-bottom: 30px;
+        }
+
         .example {
-            padding: 20px;
-            margin-bottom: 20px;
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
             background-color: #f9f9f9;
         }
 
-        .important {
+        footer {
+            background-color: #00796b;
             color: white;
-            background-color: red;
-            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 0.9em;
         }
 
-        .normal {
-            color: black;
-            background-color: lightblue;
-            font-style: italic;
-        }
-
-        .custom-border {
-            border-top: 5px solid red;
-            border-bottom: 3px dashed blue;
-            border-left: 4px dotted green;
-            border-right: 6px double purple;
-            padding: 20px;
+        code {
+            background-color: #e0f7fa;
+            padding: 2px 4px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>CSS Tutorial - Định dạng khung và viền</h1>
+        <h1>Bài 16: Định dạng khung - Kết nối tri thức</h1>
     </header>
 
+    <nav>
+        <a href="#hide-elements">Ẩn phần tử</a>
+        <a href="#selector-meaning">Ý nghĩa định dạng</a>
+        <a href="#format-paragraphs">Định dạng đoạn văn</a>
+        <a href="#borders">Khung và viền</a>
+    </nav>
+
     <main>
-        <section>
-            <h2>1. Ẩn phần tử HTML</h2>
-            <p>Để ẩn một phần tử HTML trên trang web, bạn có thể sử dụng thuộc tính CSS <code>display: none;</code>.</p>
+        <section id="hide-elements" class="content-section">
+            <h2>Luyện tập 1: Phần tử HTML có thể ẩn đi trên trang web được không?</h2>
+            <p><strong>Lời giải:</strong> Có, phần tử HTML có thể được ẩn đi trên trang web bằng cách sử dụng lệnh CSS <code>display: none;</code>.</p>
+            <div class="example">
+                <pre><code>p {
+    display: none;
+}</code></pre>
+            </div>
         </section>
 
-        <section>
-            <h2>2. Ý nghĩa định dạng <code>test.test_more</code></h2>
-            <p>Bộ chọn đồng thời <code>test.test_more</code> áp dụng cho các phần tử có cả hai lớp <code>test</code> và <code>test_more</code>. Ví dụ:</p>
-            <pre><code>.test.test_more {
+        <section id="selector-meaning" class="content-section">
+            <h2>Luyện tập 2: Ý nghĩa định dạng <code>test.test_more</code></h2>
+            <p><strong>Ý nghĩa:</strong></p>
+            <ul>
+                <li><code>test.test_more</code>: Đây là bộ chọn đồng thời áp dụng cho các phần tử có cả hai lớp <code>test</code> và <code>test_more</code>.</li>
+                <li><code>background-color: red;</code>: Đặt màu nền của các phần tử này thành màu đỏ.</li>
+            </ul>
+            <div class="example">
+                <pre><code>.test.test_more {
     background-color: red;
 }</code></pre>
-            <p>Trong ví dụ này, các phần tử có lớp <code>test</code> và <code>test_more</code> sẽ có màu nền đỏ.</p>
+            </div>
         </section>
 
-        <section>
-            <h2>3. Định dạng cho các đoạn văn P1, P2, và P3</h2>
-            <p>Giả sử trang web có nhiều thẻ <code>&lt;p&gt;</code>, và bạn muốn định dạng:</p>
+        <section id="format-paragraphs" class="content-section">
+            <h2>Vận dụng 1: Định dạng đoạn P1, P2, P3</h2>
+            <p>Giả sử trang web có nhiều thẻ <code>&lt;p&gt;</code>, bạn có thể định dạng:</p>
             <ul>
                 <li><strong>P1:</strong> Khác biệt so với các đoạn còn lại.</li>
-                <li><strong>P2 và P3:</strong> Có cùng kiểu định dạng và cũng khác biệt.</li>
-                <li><strong>Các đoạn khác:</strong> Định dạng giống nhau.</li>
+                <li><strong>P2 và P3:</strong> Có cùng kiểu định dạng.</li>
             </ul>
-            <p>Cách làm:</p>
-            <pre><code>&lt;p class="important"&gt;Đoạn P1&lt;/p&gt;
+            <div class="example">
+                <pre><code>&lt;p class="important"&gt;Đoạn P1&lt;/p&gt;
 &lt;p class="normal"&gt;Đoạn P2&lt;/p&gt;
 &lt;p class="normal"&gt;Đoạn P3&lt;/p&gt;</code></pre>
-            <p>CSS:</p>
-            <pre><code>.important {
+                <pre><code>.important {
     color: white;
     background-color: red;
     font-weight: bold;
@@ -86,31 +134,27 @@
     background-color: lightblue;
     font-style: italic;
 }</code></pre>
-            <div class="example important">Đoạn P1</div>
-            <div class="example normal">Đoạn P2</div>
-            <div class="example normal">Đoạn P3</div>
+            </div>
         </section>
 
-        <section>
-            <h2>4. Thiết lập định dạng cho khung và viền</h2>
-            <p>Bạn có thể thiết lập các viền khác nhau cho từng cạnh sử dụng:</p>
-            <ul>
-                <li><code>border-top</code>: Định dạng viền trên.</li>
-                <li><code>border-bottom</code>: Định dạng viền dưới.</li>
-                <li><code>border-left</code>: Định dạng viền trái.</li>
-                <li><code>border-right</code>: Định dạng viền phải.</li>
-            </ul>
-            <p>Ví dụ:</p>
-            <pre><code>.custom-border {
+        <section id="borders" class="content-section">
+            <h2>Vận dụng 2: Thiết lập định dạng cho các khung và viền</h2>
+            <p>Bạn có thể thiết lập viền khác nhau cho từng cạnh của khung bằng các thuộc tính <code>border-top</code>, <code>border-bottom</code>, <code>border-left</code>, và <code>border-right</code>.</p>
+            <div class="example">
+                <pre><code>.custom-border {
     border-top: 5px solid red;
     border-bottom: 3px dashed blue;
     border-left: 4px dotted green;
     border-right: 6px double purple;
     padding: 20px;
 }</code></pre>
-            <div class="custom-border">Đây là ví dụ về khung với các viền khác nhau cho từng cạnh.</div>
+            </div>
         </section>
     </main>
- <a href="https://uyenthao-robot.github.io/websitenhom5/" class="home-button">HOME</a>
+
+    <footer>
+        <p>&copy; 2025 Bài 16: Định dạng khung. All rights reserved.</p>
+    </footer>
+    <a href="https://uyenthao-robot.github.io/websitenhom5/" class="home-button">HOME</a>
 </body>
 </html>
